@@ -1,0 +1,115 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% load static %}
+
+{% block body %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">View Message</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <div class="mailview-content">
+                                <div class="mailview-header">
+                                    <div class="row">
+                                        <div class="col-sm-9">
+                                            <div class="text-ellipsis m-b-10">
+                                                <span class="mail-view-title">Ranger Mail-Box</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="mail-view-action">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-white btn-sm" data-toggle="tooltip" title="Delete"> <i class="fa fa-trash-o"></i></button>
+                                                    <button type="button" class="btn btn-white btn-sm" data-toggle="tooltip" title="Reply"> <i class="fa fa-reply"></i></button>
+                                                    <button type="button" class="btn btn-white btn-sm" data-toggle="tooltip" title="Forward"> <i class="fa fa-share"></i></button>
+                                                </div>
+                                                <button type="button" class="btn btn-white btn-sm" data-toggle="tooltip" title="Print"> <i class="fa fa-print"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sender-info">
+                                        <div class="sender-img">
+                                            <img width="40" alt="" src="assets/img/user.jpg" class="rounded-circle">
+                                        </div>
+                                        <div class="receiver-details float-left">
+                                            <span class="sender-name">{{Mail.user.firt_name}} ({{Mail.user.email}})</span>
+                                            <span class="receiver-name">
+												to <span></span><span>{{Mail.email}}</span><span></span>
+                                            </span>
+                                        </div>
+                                        <div class="mail-sent-time">
+                                            <span class="mail-time">{{Mail.posted_at}}</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="mailview-inner">
+                                    <p>{{Mail.subject}}</p>
+                                    <p>{{Mail.message}}</p>
+									<br> {{Mail.user.username}}</p>
+                                </div>
+                            </div>
+                            <div class="mail-attachments">
+                                <p><i class="fa fa-paperclip"></i> 2 Attachments - <a href="#">View all</a> | <a href="#">Download all</a></p>
+                                <ul class="attachments clearfix text-center">
+                                    <li>
+                                        <div class="attach-file"><i class="fa fa-file-pdf-o"></i></div>
+                                        <div class="attach-info">
+											<a href="#" class="attach-filename">daily_meeting.pdf</a>
+                                            <div class="attach-fileize"> 842 KB</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mailview-footer">
+                                <div class="row">
+                                    <div class="col-sm-6 left-action">
+                                        <button type="button" class="btn btn-white"><i class="fa fa-reply"></i> Reply</button>
+                                        <button type="button" class="btn btn-white"><i class="fa fa-share"></i> Forward</button>
+                                    </div>
+                                    <div class="col-sm-6 right-action">
+                                        <button type="button" class="btn btn-white"><i class="fa fa-print"></i> Print</button>
+                                        <button type="button" class="btn btn-white"><i class="fa fa-trash-o"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'assets/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.slimscroll.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+</body>
+
+{% endblock %}

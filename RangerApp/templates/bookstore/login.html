@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- login23:11-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+    <title>Ranger - Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+    <div class="main-wrapper account-wrapper">
+      <div class="card-footer">
+        <div class="d-flex justify-content-center">
+              {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <a class="alert alert-success" style="color:red;"> {{ message }}</a>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+              </div>
+      </div>
+        <div class="account-page">
+			<div class="account-center">
+				<div class="account-box">
+                    <form action="{% url 'login' %}" method="post" class="form-signin">
+                      {% csrf_token %}
+						<div class="account-logo">
+                            <a href="#"><img src="{% static 'assets/img/logo-dark.png' %}" alt=""></a>
+                        </div>
+                        <div class="form-group">
+                            <label>Username or Email</label>
+                            <input type="text" autofocus="" name="username" placeholder="Username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="form-group text-right">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" name="sign-in" class="btn btn-primary account-btn" value="Sign In">Login</button>
+                        </div>
+                        <!--<div class="text-center register-link">
+                            Don’t have an account? <a href="register.html">Register Now</a>
+                        </div>-->
+                    </form>
+                </div>
+			</div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+</body>
+
+
+<!-- login23:12-->
+</html>
+
